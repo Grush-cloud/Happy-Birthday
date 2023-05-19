@@ -8,7 +8,7 @@ function App() {
     setIsClicked((prevState) => !prevState);
   };
   const handleClick = () => {
-    let url = "http://localhost:5173/coupon.jpg";
+    let url = "https://https://grush-cloud.github.io/Happy-Birthday/coupon.jpg";
     saveAs(url, "coupon.jpg");
   };
   return (
