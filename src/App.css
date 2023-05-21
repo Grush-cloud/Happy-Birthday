@@ -130,28 +130,19 @@ input#click {
 }
 
 #click:checked + .click {
-  transform: translateY(-70vh);
+  transform: translateY(-77vh);
 }
 
-.wishes {
-  transition: 0.5s;
-  color: red;
-  font-size: 37px;
-  text-align: center;
-  z-index: -2;
-  position: absolute;
-  opacity: 0;
-  width: 600px;
-}
 .card {
+  transition: 0.5ss;
   position: absolute;
-  top: 30%;
-
-  width: 350px;
-  height: 310px;
+  top: -15%;
+  max-width: 350px;
+  width: 200%;
+  height: 400px;
   opacity: 0;
   animation: animateBg 14s linear infinite;
-  background-image: linear-gradient(0deg, #fffb05, #13008b, #565560, #fe003b);
+  background-image: linear-gradient(0deg, #13008b, #565560, #fe003b);
   background-size: 100% 300%;
   border-radius: 10px;
   padding: 5px;
@@ -185,7 +176,7 @@ input#click {
 
 .message {
   font-size: 16px;
-  max-width: 700px;
+  max-width: 380px;
   margin-top: 0;
   font-family: "Roboto Condensed", sans-serif;
   color: white;

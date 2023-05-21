@@ -1,18 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { saveAs } from "file-saver";
 
 function App() {
-  const [isClicked, setIsClicked] = useState(true);
-  const InputClick = (e) => {
+  const [isClicked, setIsClicked] = useState(false);
+  const InputClick = () => {
     setIsClicked((prevState) => !prevState);
   };
   const handleClick = () => {
     let url = "https://grush-cloud.github.io/Happy-Birthday/coupon.jpg";
     saveAs(url, "coupon.jpg");
   };
+  useEffect(() => {
+    const audio = new Audio();
+    audio.src = isClicked ? "fireworks.mp3" : "shake.mp3";
+    audio.loop = true;
+    audio.play();
+
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, [isClicked]);
   return (
-    <div className={isClicked ? " birthday-gift shaking" : "birthday-gift"}>
+    <div className={!isClicked ? " birthday-gift shaking" : "birthday-gift"}>
       <div className="gift">
         <input id="click" type="checkbox" onClick={InputClick} />
         <label className="click" htmlFor="click"></label>
@@ -23,18 +34,24 @@ function App() {
           </div>
           <div className="card-body">
             <p className="message">
-              Heyyyy! Happy birthday to you! I hope this day brings you
-              countless reasons to smile, be happy, and create unforgettable
-              moments. I remember you warning me not to get you a gift, so I
-              thought we could do something different and special. Instead of a
-              traditional gift, I've prepared some coupons for you. I know how
-              much you love your novels, so when you're ready to accept my gift,
-              just show me these coupons. Once again, happy birthday to you! I'm
-              going to do my best to make this one of your best birthdays yet.
+              Happy birthday, Oghome! Wishing you a day filled with joy,
+              laughter, and beautiful moments. May this special day be a
+              celebration of all the wonderful qualities that make you so
+              amazing. I pray that God keeps you strong and healthy, and blesses
+              you with many more birthdays to come. I know you mentioned not
+              wanting me to gift you anything, but honestly I'm a little
+              stubborn so i gotta show my appreciation for you. Knowing how much
+              you love reading novels, I couldn't resist creating these coupons
+              as a token of my affection. When you're ready to accept my
+              birthday gift, simply show me the coupons. It's my small way of
+              cherishing our connection and bringing a smile to your face. Once
+              again, happy birthday. May this day be filled with happiness,
+              happiness and joy. I'm looking forward to celebrating with you and
+              creating lasting memories. Can't wait to see you later today! 💙
             </p>
           </div>
           <div>
-            <button onClick={handleClick}>Download Coupon</button>
+            <button onClick={handleClick}>Tap here for Coupon</button>
           </div>
         </div>
 
