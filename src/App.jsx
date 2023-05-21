@@ -17,9 +17,20 @@ function App() {
     audio.loop = true;
     audio.play();
 
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
     return () => {
       audio.pause();
       audio.currentTime = 0;
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [isClicked]);
   return (
