@@ -58,7 +58,7 @@ function App() {
               cherishing our connection and bringing a smile to your face. Once
               again, happy birthday. May this day be filled with happiness,
               happiness and joy. I'm looking forward to celebrating with you and
-              creating lasting memories. Can't wait to see you later today! 💙
+              creating lasting memories. Can't wait to see you later today! 💖
             </p>
           </div>
           <div>
