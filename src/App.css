@@ -130,7 +130,7 @@ input#click {
 }
 
 #click:checked + .click {
-  transform: translateY(-77vh);
+  transform: translateY(-60vh);
 }
 
 .card {
